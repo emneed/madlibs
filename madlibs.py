@@ -75,6 +75,8 @@ def show_madlib():
     amount_of_time2 = request.args.get("amount_of_time2")
     holiday_food = request.args.get("holiday_food")
 
+    print request.args
+
     return render_template("madlib.html",
                            verbing=verbing,
                            place=place,
@@ -100,6 +102,11 @@ def show_madlib():
                            amount_of_time2=amount_of_time2,
                            holiday_food=holiday_food,
                            )
+
+
+@app.route("/sample")
+def show_sample():
+    return render_template("sample_madlib.html")
 
 
 if __name__ == '__main__':
